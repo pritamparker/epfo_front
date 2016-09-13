@@ -1109,7 +1109,7 @@ a {
 a:hover,
 a:focus {
   color: #91170a;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -1228,8 +1228,8 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 18px;
-  margin-bottom: 9px;
+  margin-top: 1px;
+  margin-bottom: 18px;
 }
 h1 small,
 .h1 small,
@@ -1293,7 +1293,7 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0 0 9px;
+  margin: -30px -5px -30px;
 }
 .lead {
   margin-bottom: 18px;
@@ -4502,6 +4502,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #000000;
   border-color: #eeeeee;
 }
+.navbar-default_footer {
+  background-color: #dddddd;
+  border-color: #eeeeee;
+}
 .navbar-default .navbar-brand {
   color: #777777;
 }
@@ -5691,6 +5695,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-default {
   border-color: #dddddd;
+
 }
 .panel-default > .panel-heading {
   color: #444444;
@@ -6911,13 +6916,50 @@ label {
 .pager .disabled > a {
   border-color: #dddddd;
 }
+
+/*Custom css for index*/
 div.fixed {
     position: absolute;
     margin-left:65px;
     width: 300px;
     margin-top: 30px;
 }
+div.fixed_right{
+  position: absolute;
+    margin-left:73%;
+    width: 300px;
+    margin-top: 30px;
+}
+div.fixed_centre
+{
+  position: absolute;
+  margin-left: 30%;
+  width:40%;
+  margin-top: 10px;
+}
 .banner 
 {
   text-align: center;
+}
+.mid{
+  margin-left: 100px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#container_buttons{
+  /*width: 400px;*/
+  margin: 0 auto;
+  background: rgba(178, 180, 202, 0.22);
+  padding: 60px 60px 30px;
+  /*border-radius: 20px;*/
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.09) inset;
+}
+
+#container_buttons p{
+  display:block;
+  padding-bottom:60px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
 }
