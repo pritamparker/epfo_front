@@ -19,7 +19,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
 <body>
 <nav class="navbar navbar-default">
@@ -71,68 +70,25 @@
   <!-- </div> -->
   
     
-  <form method="post" action="http://localhost:8000/signupEmployer" id='signupEmployer'> 
-    <h1>Employer Sign up  <span class="glyphicon glyphicon-send" aria-hidden="true"></span></h1>
+  <form method='post' action="http://localhost:8000/signinMember" id='member_login'>
+    <h1>Login Page  <span class="glyphicon glyphicon-send" aria-hidden="true"></span></h1>
 
     <div class="contentform">
-      <div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+      <div id="sendmessage"> Yourare log in successfully.</div>
 
      
         <div class="form-group">
-          <p>Registered Unit<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-bookmark"></i></span>
-          <input type="text" name="uid" id="uid" required/>
+          <p>Old CMPF No.<span>*</span></p>
+          <span class="icon-case"><i class="glyphicon glyphicon-hand-right"></i></span>
+          <input type="text" name="legacy_number" id="legacy_number"/>
           
           <div class="validation"></div>
         </div>
 
         <div class="form-group">
-          <p>Legacy No.<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-pushpin"></i></span>
-          <input type="text" name="legacy_number" id="legacy_number" required/>
-          <div class="validation"></div>
-        </div>
-
-        <div class="form-group">
-          <p>Name<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-tags"></i></span>
-          <input type="text" name="name" id="name"/>
-          <div class="validation"></div>
-        </div>
-
-        <div class="form-group">
-          <p>Address<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-home"></i></span>
-          <input type="text" name="address" id="address"/>
-          <div class="validation"></div>
-        </div>
-
-        <div class="form-group">
-          <p>Designated partner<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-link"></i></span>
-          <input type="text" name="designated_partner" id="designated_partner"/>
-          <div class="validation"></div>
-        </div>
-
-        <div class="form-group">
-          <p>PAN No.<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-rub"></i></span>
-          <input type="text" name="pan" id="pan" required/>
-          <div class="validation"></div>
-        </div>
-
-        <div class="form-group">
-          <p>Email<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-envelope"></i></span>
-          <input type="text" name="email" id="email" required/>
-          
-          <div class="validation"></div>
-        </div>
-
-        <div class="form-group">
-          <p>Mobile<span>*</span></p>
-          <span class="icon-case"><i class="glyphicon glyphicon-earphone"></i></span>
-          <input type="number" name="mobile" id="mobile" required/>
+          <p>New CMPF NO./UID<span>*</span></p>
+          <span class="icon-case"><i class="glyphicon glyphicon-hand-right"></i></span>
+          <input type="text" name="uid" id="uid"/>
           <div class="validation"></div>
         </div>
 
@@ -142,11 +98,12 @@
           <input type="password" name="password" id="password" required/>
           <div class="validation"></div>
         </div>
-     <div class="g-recaptcha" data-sitekey="6LdcZAcUAAAAAP7QYa10511Uumw4njMgOag-SFlY"></div>
+
+     
     
     </div>
-    <button type = "submit" class="bouton-contact" id='submit'>Submit</button>
-    
+    <button type = "submit" class="bouton-contact" id='submit'>Sign in</button>
+
   </form>
 </div>
 
@@ -161,31 +118,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/employer_autofill_signupform.js"></script>
-
 
     <script>
-      // submit button javascript for error checking.
-      $("#submit").click(function (e){
-        e.preventDefault();
-        var a = $("#signupEmployer_form").serialize();
-        // [{name : 'field name', value : 'value'}]
-        $.ajax({
-          type : 'POST',
-          url  : 'http://localhost:8000/signupEmployer',
-          data : a,
-          error : function (err){
-            alert(err);
-            console.log(err);
-          },
-          success : function (res){
-            // just redirect it to landing page.
-            // user data in res.result. 
+    // submit button javascript for error checking.
+    $("#submit").click(function (e){
+      e.preventDefault();
+      var a = $("#member_login").serialize();
+      // [{name : 'field name', value : 'value'}]
+      $.ajax({
+        type : 'POST',
+        url  : 'http://localhost:8000/signinMember',
+        data : a,
+        error : function (err){
+          alert(err);
+          console.log(err);
+        },
+        success : function (res){
+          // just redirect it to landing page.
+          // user data in res.result. 
 
-            // (http://localhost:8000/landingPage/2000630242)
-          } 
-        });
+          // (http://localhost:8000/landingPage/2000630242)
+        } 
       });
+    });
 
 
     </script>

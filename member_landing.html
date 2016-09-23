@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CMPFO e-Services</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/style4.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="jumbotron banner">
+            <a href="/index.html"><img src="logo.png" /></a>
+        </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index.html">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Member <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Employer</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Summary</h3>
+                    </div>
+                    <a href="#" class="list-group-item" onclick="showDiv()">E-Passbook/Ledger</a>
+                    <a href="#" class="list-group-item">Monthly Contribution</a>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Profile</h3>
+                    </div>
+                    <a href="#" class="list-group-item">View Profile</a>
+                    <a href="#" class="list-group-item">Edit Mobile No.</a>
+                    <a href="#" class="list-group-item">Edit Email</a>
+                    <a href="#" class="list-group-item">Edit Password</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <h3 style="text-align:center;"> Welcome <%= FULL_NAME %>;<h3>
+    
+    <div id="container" style="display:none;">
+        <table class="table table-bordered">
+            <tr>
+                <th>Unit Code</th>
+                <td id="unitcode"></td>
+                <th>Unit Name</th>
+                <td id="unitname"></td>
+            </tr>
+            <tr>
+                <th>PF Account</th>
+                <td id="pf_account"></td>
+                <th>CMPF Account</th>
+                <td id="cmpf_account"></td>
+            </tr>
+             <tr>
+                <th>Full Name</th>
+                <td id="full_name"></td>
+                <th>Date of Joining</th>
+                <td id="doj"></td>
+            </tr>
+            <tr>
+                <th>Father's Name</th>
+                <td id="fname"></td>
+                <th>Raw Data</th>
+                <td id="raw_data"></td>
+            </tr>
+        </table>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>FY</th>
+                <th>INT @</th>
+                <th>OPM</th>
+                <th>OPE</th>
+                <th>CMEM</th>
+                <th>CEMP</th>
+                <th>VC</th>
+                <th>IntM</th>
+                <th>lemp</th>
+                <th>Advances</th>
+                <th>CBM</th>
+                <th>CPE</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+   </div>
+   </div>
+    <!-- <div class="col-sm-3"> -->
+         
+         <!-- 3rd div
+
+      
+    </div> -->
+    </div>
+    </div>
+    <div class="navbar navbar-default_footer navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">© 2016 - CMPFO
+                <a href="#" target="_blank">e-services</a>
+            </p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/employer_autofill_signupform.js"></script>
+        <script>
+    function showDiv() {
+            document.getElementById('container').style.display = "block";
+            var jcontent = {
+      "id":"57df9475",
+      "PARTNER":"2000630242",
+      "BPKIND":"0001",
+      "Unit_Name":"ASN/TEST/01",
+      "NAME":"John",
+      "FNAME":"Snow",
+      "PF_Account":12341263,
+      "CMPF_Account":"asd323",
+      "ZZDESIGNATION1":null,
+      "CITY1":"Distt-Korea(C.G.)",
+      "RAW_DATA":null,
+      "POST_CODE1":null,
+      "STREET":"NCPH Colliery,P.O.-Haldibadi",
+      "HOUSE_NUM1":null,
+      "STR_SUPPL1":null,
+      "COUNTRY":"IN",
+      "REGION":"4",
+      "TEL_NUM":null,
+      "ADDHAR":null,
+      "PAN":"ABCDE12345A",
+      "DOJ":"21/10/12",
+      "__v":0
+   }
+           unitcode.innerHTML=jcontent.id;
+           unitname.innerHTML=jcontent.Unit_Name;
+           pf_account.innerHTML=jcontent.PF_Account;
+           cmpf_account.innerHTML=jcontent.CMPF_Account;
+           full_name.innerHTML=jcontent.NAME;
+           doj.innerHTML=jcontent.DOJ
+           fname.innerHTML=jcontent.FNAME;
+           raw_data.innerHTML=jcontent.RAW_DATA;
+}
+        </script>
+        <!-- script for table -->
+        <script>
+            $.getJSON( "data.json",function(data){
+                var items = [];
+                $.each(data, function(key, val){
+                    items.push("<tr>");
+                    items.push("<td id='" + key + "'>" + val.FY + "</td>");
+                    // jsone value name is id
+                    items.push("<td id='" + key + "'>" + val.INT + "</td>");
+                    items.push("<td id='" + key + "'>" + val.OPM + "</td>");
+                    items.push("<td id='" + key + "'>" + val.OPE + "</td>");
+                    items.push("<td id='" + key + "'>" + val.CMEM + "</td>");
+                    items.push("<td id='" + key + "'>" + val.CEMP + "</td>");
+                    items.push("<td id='" + key + "'>" + val.VC + "</td>");
+                    items.push("<td id='" + key + "'>" + val.IntM + "</td>");
+                    items.push("<td id='" + key + "'>" + val.lemp + "</td>");
+                    items.push("<td id='" + key + "'>" + val.Advances + "</td>");
+                    items.push("<td id='" + key + "'>" + val.CBM + "</td>");
+                    items.push("<td id='" + key + "'>" + val.CBE + "</td>");
+                    items.push("<td id='" + key + "'>" + val.Total + "</td>");
+                    items.push("</tr>");
+                });
+                $("<tbody/>", { "class":"mydata",html:items.join("")}).appendTo("table");
+            });
+        </script>
+
+</body>
+
+</html>
