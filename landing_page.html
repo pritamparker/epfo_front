@@ -68,6 +68,7 @@
                         <h3 class="panel-title">Upload</h3>
                     </div>
                     <a href="#" class="list-group-item" onclick="showDiv()">Upload VV Form</a>
+                    <a href="#" class="list-group-item" onclick="showDiv()">Form Summary</a>
                     <a href="#" class="list-group-item">View Summary</a>
                      <a href="#" class="list-group-item">View Statement</a>
                       <a href="#" class="list-group-item">View Member Summary</a>
@@ -84,7 +85,7 @@
             <div class="col-sm-6" >
                 <h3 style="text-align:center;"> Welcome <%= FULL_NAME %>;<h3>
 
-  <div id="upload"  style="display:none;" class="answer_list" >
+  <div id="upload">
 
 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="http://localhost :8000/uploadFile">
   <fieldset>
@@ -138,6 +139,10 @@
             </fieldset>
             </form>
         </div>
+    </div>
+    <!-- Div for form summary table -->
+    <div>
+        
     </div>
     <div class="col-sm-3">
          <div class="panel panel-info">
